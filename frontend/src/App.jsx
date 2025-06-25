@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import socket from "./socket";
 import ScoreModal from "./ScoreModal.jsx";
 
@@ -14,24 +14,22 @@ function App() {
         });
 
 
-      /*  setTimeout(() => {
-            setShowModal(false);
-        }, 5000);*/
+        /*  setTimeout(() => {
+              setShowModal(false);
+          }, 5000);*/
 
         return () => socket.off("scoreUpdate");
     }, []);
 
-    return (
-        <div>
-            <h1>Live Score Viewer</h1>
-            <p>Send a score via Postman to see it pop up.</p>
+    return (<div>
+            <h1>Live Request Viewer</h1>
+            <p>Send a request via Postman to see it pop up.</p>
             <ScoreModal
                 isVisible={showModal}
                 scoreData={scoreData}
                 onClose={() => setShowModal(false)}
             />
-        </div>
-    );
+        </div>);
 }
 
 export default App;

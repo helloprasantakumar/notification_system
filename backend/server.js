@@ -18,15 +18,15 @@ io.on("connection", (socket) => {
 });
 
 app.post("/submit-score", (req, res) => {
-    const {score, user} = req.body;
-    console.log("Score received from Postman:", {score, user});
+    const {msg, user} = req.body;
+    console.log("Score received from Postman:", {msg, user});
 
     // Emit to all connected clients
     io.emit("scoreUpdate", {
-        score, user, message: `Result Published a score!`
+        msg, user, message: `Request!`
     });
 
-    res.status(200).json({status: "success", score, user});
+    res.status(200).json({status: "success", msg, user});
 });
 
 server.listen(4000, () => {

@@ -5,9 +5,10 @@ const ScoreModal = ({isVisible, scoreData, onClose}) => {
 
     return (<div style={overlayStyle}>
         <div style={modalStyle}>
-            <h3 style={{fontSize: "30px", color: "#007bff"}}>{scoreData.message}</h3>
+            <h1 style={{fontSize: "30px", color: "#007bff"}}>{scoreData.message}</h1>
             <h3 style={{fontSize: "24px", color: "#007bff"}}>User: {scoreData.user}</h3>
-            <h3 style={{fontSize: "24px", color: "#007bff"}}>Score: {scoreData.score}</h3>
+            <h3 style={{fontSize: "24px", color: "#e20a0a"}}>Message: {scoreData.msg}</h3>
+            {/*<h3 style={{fontSize: "24px", color: "#007bff"}}>Score: {scoreData.score}</h3>*/}
             <button onClick={onClose} style={buttonStyle}>Close</button>
         </div>
     </div>);
